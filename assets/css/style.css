@@ -32,6 +32,22 @@ body {
 }
 
 /* --------------------------- */
+/*        Panel Styles         */
+/* --------------------------- */
+.panel-default > .panel-heading {
+	color: #fff;
+	font-family: 'Merriweather', serif;
+	background-color: rgba(65, 183, 255, 1);
+	background-image: none;
+	text-shadow: 1px 1px 1px rgba(97, 32, 33, .3);
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+
+}
+
+
+/* --------------------------- */
 /*        Table Styles         */
 /* --------------------------- */
 
