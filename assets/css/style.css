@@ -1,0 +1,48 @@
+body {
+	background-color: rgba(97, 32, 33, 1);
+	font-family: 'Lato', sans-serif;
+}
+
+/* --------------------------- */
+/*      Jumbotron Styles       */
+/* --------------------------- */
+.jumbotron {
+	min-height: 300px;
+	background: 
+        /*linear-gradient(rgba(65, 222, 255, 0.25), rgba(65, 222, 255, 0.6)),*/
+        linear-gradient(rgba(65, 183, 255, 0), rgba(65, 183, 255, 0.3)),
+        url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.jumbotron  h1 {
+	text-align: center;
+	color: #fff;
+	font-family: 'Merriweather', serif;
+	text-shadow: 1px 1px 2px rgba(97, 32, 33, 1);
+}
+
+.jumbotron  p {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Merriweather', serif;
+	text-shadow: 1px 1px 1px rgba(97, 32, 33, 1);
+}
+
+/* --------------------------- */
+/*        Table Styles         */
+/* --------------------------- */
+
+th,
+label {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	color: rgba(65, 183, 255, 1);
+}
+
+.table-hover tbody tr:hover td {
+	background-color: rgba(65, 183, 255, 0.2);
+}
