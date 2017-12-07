@@ -45,19 +45,36 @@
   database.ref().on('child_added', function(snapshot) {
     var train = snapshot.val();
 
-    console.log(train);
+    console.log(train.name);
+    console.log(train.destination);
+    console.log(train.time);
 
     // Format First Train time
-    var firstTrain = moment.unix(train.time).format('hh:mm');
+    var firstTrain = moment.unix(train.time).format('HH:mm');
+
 
     // Calculate the next train time
-    var nextTrain = moment().unix(firstTrain + train.frequency);
-    var nextTime = moment.unix(nextTrain).format('hh:mm');
+    var newTime = moment(firstTrain, 'hh:mm')
+        .add(train.frequency, 'minutes')
+        .format('hh:mm');
+    console.log(newTime);
 
+
+    // Current Time
+    var current = moment().format('hh:mm');
+    console.log(current);
+
+    // Calculate Minutes away from next Traim 
+    var nextTrain = moment(newTime, 'hh:mm')
+        .subtract(current, 'hh:mm')
+        .format('mm');
     console.log(nextTrain);
-    console.log(nextTime);
 
-    $('#train-table > tbody').append('<tr><td>' + train.name + '</td><td>' + train.destination + '</td><td>' + train.frequency + '</td><td>' + firstTrain + '</td><td>' + nextTime + '</td>')
+
+    // Minutes to Next Train
+    // var nextTrain = newTime.from(current, true);
+
+    $('#train-table > tbody').append('<tr><td>' + train.name + '</td><td>' + train.destination + '</td><td>' + train.frequency + '</td><td>' + newTime + '</td><td>' + nextTrain + '</td>')
   });
 
 
